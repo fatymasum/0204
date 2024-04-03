@@ -1,23 +1,3 @@
-let birthday = new Date("09-30-2002");
-let i = 0
-setInterval(() => {
-    let now = new Date();
-    let between = now - birthday
-    let il = Math.trunc(between / (1000 * 60 * 60 * 24 * 365));
-    let gun = Math.trunc(between / (1000 * 60 * 60 * 24) % 365);
-    let saat = Math.trunc(between / (1000 * 60 * 60) % 24);
-    let deqiqe = Math.trunc(between / (1000 * 60) % 60);
-    let saniye = Math.trunc(between / 1000) % 60;
-    console.clear();
-
-    console.log(`%c${il} il ${gun} gun ${saat} saat ${deqiqe} deqiqe ${saniye} saniye`, `color:${colors[i]};`);
-    i++
-    if (i === colors.length) {
-        i = 0
-    }
-}, 1000)
-let colors = ["red", "green", "blue", "black", "brown","yellow"]
-
 
 
 
@@ -26,37 +6,34 @@ let colors = ["red", "green", "blue", "black", "brown","yellow"]
 let students = [
     {
         name: "Faty",
-        surname: "Masumlu",
-        value: 80,
-        category: "A",
-        hobby: ["walking", "dancing"]
-    },
+        surname: "Masum",
+        mark: 70,
 
+    },
     {
         name: "Gulchin",
         surname: "Suleyman",
-        value: 90,
-        category: "B",
-        hobby: ["watching film", "drink tea"]
-    },
+        mark: 90,
 
-    {
-        name: "Lamia",
-        surname: "Rzayeva",
-        value: 75,
-        category: "B",
-        hobby: ["singing", "dancing"]
     },
-
     {
-        name: "Said",
-        surname: "Rustem",
-        value: 90,
-        category: "A",
-        hobby: ["spor", "chess"]
+        name: "Umid",
+        surname: "Rza",
+        mark: 33,
     }
 ]
-let searchedName = prompt("ENTER name");
-let found = students.find (student=>student.name === searchedName);
-if( found) console.log(found);
-else console.log("not found")
+
+let sortedStudent = students.sort((a, b) => a.mark - b.mark)
+console.log(sortedStudent)
+
+
+let num1 = Math.floor(Math.random() * 100)
+let num2 = Math.floor(Math.random() * 100)
+let num3 = Math.floor(Math.random() * 100)
+let num4 = Math.floor(Math.random() * 100)
+let num5 = Math.floor(Math.random() * 100)
+
+let array = [num1, num2, num3, num4, num5]
+console.log(array)
+let sum = array.reduce((a ,b )=> a+b);
+console.log(sum)
